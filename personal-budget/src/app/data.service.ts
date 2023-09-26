@@ -25,13 +25,9 @@ export class DataService {
     labels: [] as any[]
   };
 
-  private myBudget = [] as any[];
+  public myBudget = [] as any[];
 
-  constructor(private http: HttpClient) {
-    if (this.myBudget.length === 0) {
-      this.fetchDataFromBackend();
-    }
-  }
+  constructor(private http: HttpClient) {  }
 /*
   setData(): any{
     this.http.get('http://localhost:3000/budget').subscribe(res=> {
@@ -41,21 +37,7 @@ export class DataService {
     });
   }
 */
-  fetchDataFromBackend() {
-    this.http.get('http://localhost:3000/budget')
-      .subscribe((res: any) => {
-        for (var i = 0; i < res.myBudget.length; i++){
-          this.myBudget[i] = res.myBudget[i];
-          this.dataSource.datasets[0].data[i] = res.myBudget[i].budget;
-          this.dataSource.labels[i] = res.myBudget[i].title;
-        }
-      });
-  }
-
   getData(): any {
-    if (this.myBudget.length === 0) {
-      this.fetchDataFromBackend();
-    }
-    return this.dataSource;
+    return this.http.get('http://localhost:3000/budget');
   }
 }

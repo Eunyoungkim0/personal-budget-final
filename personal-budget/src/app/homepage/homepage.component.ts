@@ -1,5 +1,4 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Chart } from 'chart.js/auto';
 import { DataService } from '../data.service';
 
@@ -28,26 +27,28 @@ export class HomepageComponent implements AfterViewInit{
     labels: [] as any[]
   };
 
-  constructor(private http: HttpClient, private dataService: DataService) {
-  }
+  constructor(private dataService: DataService) {  }
 
   ngAfterViewInit(): void {
-    this.createChart();
-/*
-    this.http.get('http://localhost:3000/budget')
-    .subscribe((res: any) => {
-      for (var i = 0; i < res.myBudget.length; i++) {
-        this.dataSource.datasets[0].data[i] = res.myBudget[i].budget;
-        this.dataSource.labels[i] = res.myBudget[i].title;
+    if(this.dataService.myBudget.length == 0){
+      this.dataService.getData().subscribe((res:any) => {
+        this.dataService.myBudget = res.myBudget;
+        for (var i = 0; i < res.myBudget.length; i++){
+          this.dataSource.datasets[0].data[i] = res.myBudget[i].budget;
+          this.dataSource.labels[i] = res.myBudget[i].title;
+        }
+        this.createChart();
+      });
+    }else{
+      for (var i = 0; i < this.dataService.myBudget.length; i++){
+        this.dataSource.datasets[0].data[i] = this.dataService.myBudget[i].budget;
+        this.dataSource.labels[i] = this.dataService.myBudget[i].title;
       }
       this.createChart();
-    });
-*/
+    }
   }
 
   createChart() {
-    this.dataSource = this.dataService.getData();
-    //var ctx = document.getElementById("myChart").getContext("2d");
     var ctx = document.getElementById('myChart') as HTMLCanvasElement;
     var myPieChart = new Chart(ctx, {
         type: 'pie',
