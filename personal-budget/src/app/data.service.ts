@@ -13,4 +13,7 @@ export class DataService {
   signup(data: any) {
     return this.http.post(`${this.apiUrl}/signup`, data);
   }
+  login(data: any) {
+    return this.http.post(`${this.apiUrl}/login`, data);
+  }
 }

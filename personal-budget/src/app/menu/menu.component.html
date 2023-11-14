@@ -3,6 +3,6 @@
       <!-- This is an A11y Change -->
       <li><a [routerLink]="['/']" aria-label="Go to home page">Home</a></li>
       <li><a [routerLink]="['/dashboard']" aria-label="Go to dashboard page">Dashboard</a></li>
-      <li><a [routerLink]="['/login']" aria-label="Go to login page">Login</a></li>
+      <li><a [routerLink]="loginLink" (click)="handleClick()" aria-label="Go to login page" id="loginout">{{ loginText }}</a></li>
   </ul>
 </nav>

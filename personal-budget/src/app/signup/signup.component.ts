@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'pb-signup',
@@ -7,7 +8,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-  constructor(private signupService: DataService) {}
+  constructor(private signupService: DataService, private router: Router) {}
 
   dataValidation() {
     const userIdElement = document.getElementById('userId') as HTMLInputElement;
@@ -54,10 +55,16 @@ export class SignupComponent {
       };
       console.log(data);
 
-
       this.signupService.signup(data).subscribe(
-        (response) => {
+        (response: any) => {
           console.log('Signup successful!', response);
+          if(response.success) {
+            console.log(response);
+            const message = `Hello ${response.firstname}, welcome to Personal Budget!`;
+            alert(message);
+            this.router.navigate(['/login']);
+          }
+
         },
         (error) => {
           console.error('Signup failed!', error);
