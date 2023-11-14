@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="login-frame">
+
+  <div id="login-title">Login</div>
+
+  <div class="sub-frame">
+    <label class="title">UserId</label>
+    <input class="user-input" type="text" placeholder="Id" id="userId">
+  </div>
+
+  <div class="sub-frame">
+    <label class="title">Password</label>
+    <input class="user-input" type="password" placeholder="Password" id="password">
+  </div>
+
+  <div class="sub-frame center">
+    <button class="login-button" (click)="login()" id="login">
+      <div class="login-text">Login</div>
+    </button>
+  </div>
+
+  <div class="sub-frame center signup-message">
+    No Account yet? <a href="/signup">SIGN UP</a>
+  </div>
+
+</div>

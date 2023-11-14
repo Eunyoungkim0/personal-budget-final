@@ -1,4 +1,4 @@
-.login-frame {
+.signup-frame {
   display: flex;
   flex-direction: column;
   width:60%;
@@ -7,7 +7,7 @@
   padding: 3%;
 }
 
-#login-title {
+#signup-title {
   width: 15%;
   font-size: 4em;
   font-weight: bold;
@@ -35,7 +35,7 @@
 }
 
 
-.login-button{
+.signup-button{
   width: auto;
   height: 40px;
   margin-left: 2%;
@@ -53,7 +53,7 @@
   cursor: pointer;
 }
 
-.login-text{
+.signup-text{
   text-align: center;
   color: #F5F5F5;
   font-size: 14px;

@@ -1,41 +1,53 @@
 const express = require('express');
-const cors = require('cors');
+const mysql = require('mysql');
+const path = require('path');
+
+const PORT = process.env.port || 3000;
 const app = express();
-const port = 3000;
 
+app.use(express.json());
 
-app.use(cors());
-//app.use('/', express.static('public'));
-/*
-const budget = {
-    myBudget: [
-        {
-            title: 'Eat out',
-            budget: 25
-        },
-        {
-            title: 'Rent',
-            budget: 375
-        },
-        {
-            title: 'Grocery',
-            budget: 110
-        },
-    ]
-};
-*/
-const budget = require('./budget.json');
-
-/*
-app.get('/hello', (req, res) => {
-    res.send('Hello World');
-});
-*/
-
-app.get('/budget', (req, res) => {
-    res.json(budget);
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization');
+    next();
 });
 
-app.listen(port, () => {
-    console.log(`API served at http://localhost:${port}`)
+var connection = mysql.createConnection({
+    host    : 'classplus.mysql.database.azure.com',
+    user    : 'classplus',
+    password: 'uncc4155!',
+    database: 'classplus'
+});
+
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.post('/api/signup', async(req, res) => {
+    const { userId, password, firstname, lastname } = req.body;
+
+    const insertSQL = `INSERT INTO pb_users (userId, password, firstName, lastName)
+                VALUES('${userId}','${password}','${firstname}','${lastname}');`;
+    console.log(insertSQL);
+
+    connection.query(insertSQL, function(error, results, fields){
+        if (error) throw error;
+        res.json({
+            success: true,
+            myContent: 'Register completed successfully'
+        });
+    });
+
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+  });
+
+
+app.listen(PORT, () => {
+    console.log(`Serving on port ${PORT}`);
 });

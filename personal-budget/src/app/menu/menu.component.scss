@@ -1,6 +1,6 @@
 nav {
   width: 100%;
-  background-color: #4d5791;
+  background-color: #FFE900;
   height: 44px;
   padding: 0 40px;
 }
@@ -19,11 +19,13 @@ nav ul li a {
   line-height: 44px;
   font-size: 1.4em;
   text-decoration: none;
-  color: #fff;
+  color: black;
+  font-weight: bold;
   margin: 0;
 }
 
 nav ul li a:hover  {
   background-color: white;
-  color: #4d5791;
+  font-weight: bold;
+  color: black;
 }

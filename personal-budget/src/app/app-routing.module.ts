@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
-import { AboutComponent } from './about/about.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 import { P404Component } from './p404/p404.component';
-import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   {
@@ -13,16 +13,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'about',
-    component: AboutComponent
+    path: 'dashboard',
+    component: DashboardComponent
   },
   {
     path: 'login',
     component: LoginComponent
   },
   {
-    path: 'contact',
-    component: ContactComponent
+    path: 'signup',
+    component: SignupComponent
   },
   {
     path: '**',
