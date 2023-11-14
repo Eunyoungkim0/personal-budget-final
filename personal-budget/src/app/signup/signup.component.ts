@@ -31,7 +31,7 @@ export class SignupComponent {
       return false;
     }
     if(lastnameElement.value == ""){
-      alert("Please enter last name.");
+      alert("Please enter your last name.");
       lastnameElement.focus();
       return false;
     }
