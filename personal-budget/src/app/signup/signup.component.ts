@@ -53,13 +53,12 @@ export class SignupComponent {
         firstname: firstnameElement.value,
         lastname: lastnameElement.value,
       };
-      console.log(data);
+      // console.log(data);
 
       this.signupService.signup(data).subscribe(
         (response: any) => {
-          console.log('Signup successful!', response);
+          // console.log('Signup successful!', response);
           if(response.success) {
-            console.log(response);
             const message = `Hello ${response.firstname}, welcome to Personal Budget!`;
             alert(message);
             this.router.navigate(['/login']);

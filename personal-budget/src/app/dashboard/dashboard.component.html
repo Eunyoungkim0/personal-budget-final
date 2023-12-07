@@ -1,11 +1,76 @@
 
 <article>
-  <h1>Chart</h1>
-  <div>
-      <canvas id="myChart" width="400" height="400"></canvas>
+  <div id="dashboard-title">Dashboard</div>
+
+  <div class="dashboardFrame">
+
+    <div id="chartData">
+      <div id="budget-title">
+        <h1 class="empty">Your budget</h1>
+        <button class="add-budget" (click)="addBudget()" id="addBudget" tabindex="1">
+          <div class="add-text">Add Budget</div>
+        </button>
+        <button class="save-budget" (click)="saveBudget()" id="saveBudget" tabindex="2">
+          <div class="save-text">Save</div>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div id="budget-list"></div>
+      <div id="budget-total"></div>
+    </div>
+
+    <div class="chartFrame">
+      <div id="income-title">
+        <h1 class="empty">Your Income</h1>
+        <button class="save-budget" (click)="showResult()" id="button-result" tabindex="0">
+          <div class="save-text">Result</div>
+        </button>
+      </div>
+      <div class="line"></div>
+
+      <div class="budget-income">
+        <div class="income-text" >Your income</div>
+        <div class="income-text">
+          $<input type="number" id="income" class="input-income" min="0">
+        </div>
+      </div>
+      <div class="budget-income">
+        <div class="income-text" >Desired balance</div>
+        <div class="income-text">
+          $<input type="number" id="dbalance" class="input-income" min="0" value=100>
+        </div>
+      </div>
+      <div id="budget-summary"></div>
+    </div>
+
   </div>
+
+  <div class="dashboardFrame">
+    <div class="chartFrame-bar" id="barChart">
+      <h1>D3 Bar Chart</h1>
+      <div class="line"></div>
+      <div class="nodata">Please add your budget to see the chart.</div>
+      <pb-bar-chart [data]="data"></pb-bar-chart>
+    </div>
+  </div>
+
+  <div class="dashboardFrame">
+    <div class="chartFrame" id="basicChart">
+      <h1>Chart</h1>
+      <div class="line"></div>
+      <div class="nodata">Please add your budget to see the chart.</div>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <div class="chartFrame" id="pieChart">
+      <h1>D3 Pie Chart</h1>
+      <div class="line"></div>
+      <div class="nodata">Please add your budget to see the chart.</div>
+      <pb-pie></pb-pie>
+    </div>
+
+  </div>
+
 </article>
 
-<pb-pie>
 
-</pb-pie>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import * as facker from 'facker';
 
 @Component({
   selector: 'pb-root',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent  {
   title = 'personal-budget-final';
 }

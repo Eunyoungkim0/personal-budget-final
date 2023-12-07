@@ -1,6 +1,6 @@
 <main class="center" id="main">
 
-  <div class="page-area">
+  <div class="page-area" role="description">
 
       <pb-article>
           <h1>Stay on track</h1>
@@ -11,7 +11,8 @@
           </div>
       </pb-article>
 
-      <div class="button-frame" (click)="gotoDashboard()">
+      <!-- For accessibility -->
+      <div class="button-frame" (click)="gotoDashboard()" tabindex="0">
         Go to Dashboard
       </div>
   </div>

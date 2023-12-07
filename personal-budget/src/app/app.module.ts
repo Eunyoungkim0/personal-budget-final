@@ -15,6 +15,7 @@ import { PieComponent } from './pie/pie.component';
 import { DataService } from './data.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SignupComponent } from './signup/signup.component';
     P404Component,
     PieComponent,
     DashboardComponent,
-    SignupComponent
+    SignupComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,

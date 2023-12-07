@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PieComponent } from './pie.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PieComponent', () => {
   let component: PieComponent;
@@ -8,7 +9,8 @@ describe('PieComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PieComponent]
+      declarations: [PieComponent],
+      imports: [HttpClientModule]
     });
     fixture = TestBed.createComponent(PieComponent);
     component = fixture.componentInstance;

@@ -4,7 +4,7 @@
   "description": "The path to NGInx main folder: /usr/share/nginx/html",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js",
     "Eunyoung": "echo Eunyoung!"
   },
@@ -21,6 +21,8 @@
   "homepage": "https://github.com/Eunyoungkim0/personal-budget-final#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-jwt": "^8.4.1",

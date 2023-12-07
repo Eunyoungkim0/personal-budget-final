@@ -3,23 +3,24 @@
   <div id="login-title">Login</div>
 
   <div class="sub-frame">
-    <label class="title">UserId</label>
-    <input class="user-input" type="text" placeholder="Id" id="userId">
+    <!-- For accessibility -->
+    <label class="title" for="userId">UserId</label>
+    <input class="user-input" type="text" placeholder="Enter your user ID" id="userId">
   </div>
 
   <div class="sub-frame">
-    <label class="title">Password</label>
-    <input class="user-input" type="password" placeholder="Password" id="password">
+    <label class="title" for="password">Password</label>
+    <input class="user-input" type="password" placeholder="Enter your user password" id="password">
   </div>
 
   <div class="sub-frame center">
-    <button class="login-button" (click)="login()" id="login">
+    <button class="login-button" (click)="login()" id="login" tabindex="0">
       <div class="login-text">Login</div>
     </button>
   </div>
 
   <div class="sub-frame center signup-message">
-    No Account yet? <a [routerLink]="['/signup']">SIGN UP</a>
+    No Account yet? <!-- For accessibility --><a [routerLink]="['/signup']" aria-label="Go to sign up page">SIGN UP</a>
   </div>
 
 </div>

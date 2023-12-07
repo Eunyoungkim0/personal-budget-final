@@ -1,8 +1,14 @@
 <nav>
   <ul>
-      <!-- This is an A11y Change -->
+      <!-- added accessibility -->
       <li><a [routerLink]="['/']" aria-label="Go to home page">Home</a></li>
       <li><a [routerLink]="['/dashboard']" aria-label="Go to dashboard page">Dashboard</a></li>
-      <li><a [routerLink]="loginLink" (click)="handleClick()" aria-label="Go to login page" id="loginout">{{ loginText }}</a></li>
+      <li>
+        <a [routerLink]="loginService.isLoggedIn ? ['/'] : ['/login']"
+          (click)="loginService.isLoggedIn ? logout() : login()"
+          [attr.aria-label]="loginService.isLoggedIn ? 'Log out' : 'Login'">
+          {{ loginService.isLoggedIn ? 'Log out' : 'Login' }}
+        </a>
+      </li>
   </ul>
 </nav>

@@ -1,0 +1,189 @@
+#dashboard-title {
+  width: 15%;
+  margin: 30px;
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  border-bottom: 1px #d9d9d9 solid;
+}
+
+.dashboardFrame {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.chartFrame {
+  border:1px #d9d9d9 solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  margin: 20px;
+  padding: 10px;
+  width: 40%;
+  min-height: 10%;
+  min-width: 30%;
+  max-width: 35%;
+}
+
+.chartFrame-bar {
+  border:1px #d9d9d9 solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+  width: 40%;
+  min-height: 10%;
+  min-width: 73%;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+#myChart {
+  margin-bottom:45px;
+}
+
+.line {
+  border-bottom: 1px #d9d9d9 solid;
+}
+
+.nodata {
+  font-size: 15px;
+  text-align: center;
+}
+
+#chartData {
+  border: 1px #d9d9d9 solid;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+  width: 40%;
+  min-height: 40%;
+  min-width: 30%;
+  max-width: 35%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.div-invisible {
+  visibility: hidden;
+}
+
+#budget-total{
+  text-align: right;
+}
+
+.empty {
+  flex-grow: 1;
+}
+
+#budget-title {
+  display: flex;
+  flex-direction: row;
+}
+
+#income-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-budget {
+  width: auto;
+  height: 33px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  background: #4a8a5d;
+  border-radius: 4px;
+  align-items: right;
+  display: flex;
+  border: 1px #d9d9d9 solid;
+  cursor: pointer;
+}
+
+.save-budget {
+  width: auto;
+  height: 33px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  background: #FFE900;
+  border-radius: 4px;
+  align-items: right;
+  display: flex;
+  border: 1px #d9d9d9 solid;
+  cursor: pointer;
+}
+
+.add-text{
+  text-align: center;
+  color: #F5F5F5;
+  font-size: 14px;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+
+.save-text{
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+
+.result-button {
+  width: auto;
+  height: 33px;
+  margin: 0px 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  background: #FFE900;
+  border-radius: 4px;
+  align-items: right;
+  display: flex;
+  border: 1px #d9d9d9 solid;
+  cursor: pointer;
+}
+
+.budget-income{
+  margin-left: 7%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.income-text {
+  font-size: 15px;
+  width: 38%;
+  margin: 1% 2%;
+  padding: 2%;
+}
+
+.input-income {
+  padding-left: 8px;
+  margin-left: 3px;
+  text-align: right;
+  width: 90%;
+  height: 35px;
+}
+
+#budget-summary {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+.income-summary-row {
+  display: flex;
+  flex-direction: row;
+}
