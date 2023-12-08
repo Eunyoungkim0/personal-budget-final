@@ -7,7 +7,7 @@ import * as d3 from 'd3';
 })
 
 export class DataService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'http://104.236.8.207:3000/api';
   public d3 = d3;
 
   constructor(private http: HttpClient) { }

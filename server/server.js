@@ -18,7 +18,7 @@ const { expressjwt: exjwt } = require('express-jwt');
 app.use(compression());
 app.use(express.json());
 const corsOptions = {
-    origin: 'http://localhost:4200',
+    origin: 'http://157.245.211.147:4200',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 200
@@ -35,8 +35,7 @@ const jwtMW = exjwt({
 });
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Origin', 'http://157.245.211.147:4200, http://104.236.8.207:3000');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
