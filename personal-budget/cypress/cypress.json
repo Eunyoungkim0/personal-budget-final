@@ -1,0 +1,22 @@
+{
+  "viewportWidth": 1280,
+  "viewportHeight": 720,
+  "plugins": {
+    "cypress-visual-regression": {
+      "name": "cypress-visual-regression",
+      "basePath": "cypress/snapshots",
+      "failureThreshold": 0.05,
+      "failureThresholdType": "percent",
+      "report": true,
+      "reporterOptions": {
+        "reporterEnabled": "all",
+        "mochaFile": "cypress/reports/mochareports/report.xml",
+        "mochaReporterOptions": {
+          "reporterOptions": {
+            "reportDir": "cypress/reports/mochareports"
+          }
+        }
+      }
+    }
+  }
+}

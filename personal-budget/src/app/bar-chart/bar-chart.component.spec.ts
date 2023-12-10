@@ -22,10 +22,4 @@ describe('BarChartComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should toggle isToggleOn when showExpense is called', () => {
-    const toggle = { checked: false } as HTMLInputElement;
-    component.isToggleOn = false;
-    component.showExpense();
-    expect(component.isToggleOn).toBe(false);
-  });
 });

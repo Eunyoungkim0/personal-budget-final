@@ -108,7 +108,7 @@ export class LoginComponent{
             clearInterval(this.tokenValidationInterval);
             this.tokenValidationInterval = null;
           }
-        }, 3000);
+        }, 1000);
       }
     }
 }

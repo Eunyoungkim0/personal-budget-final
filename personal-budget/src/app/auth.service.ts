@@ -27,18 +27,25 @@ export class AuthService {
             localStorage.removeItem('exp');
             localStorage.removeItem('userId');
             localStorage.removeItem('tokenValidationActive');
+            localStorage.removeItem('extendMsgShow');
+            localStorage.removeItem('reloading');
             this.loginService.isLoggedIn = false;
             // alert("Thank you for using personal budget app!\nHave a wonderful day!");
             this.router.navigate(['/']);
             return false;
         } else {
           const timeLeft = Math.floor((exp * 1000 - Date.now()) / 1000);
-          if(timeLeft == 20){
-            const result = confirm("The token will expire in " + timeLeft + " seconds. If you want to extend, please press yes.");
-            if (result === true) {
-              const newExp = parseInt(exp) + 60;
-              localStorage.setItem('exp', newExp.toString());
-              // console.log("Token extended by 60 seconds");
+          if(timeLeft <= 20){
+            const extendMsgShow = localStorage.getItem('extendMsgShow');
+            if(!extendMsgShow){
+              const result = confirm("The token will expire in " + timeLeft + " seconds. If you want to extend 1 more minute, please press yes.");
+              if (result === true) {
+                const newExp = parseInt(exp) + 60;
+                localStorage.setItem('exp', newExp.toString());
+                // console.log("Token extended by 60 seconds");
+              }else{
+                localStorage.setItem('extendMsgShow', 'y');
+              }
             }
           }
         }
