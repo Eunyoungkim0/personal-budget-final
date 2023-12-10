@@ -2,7 +2,8 @@
 import addMatchImageSnapshotCommand  from 'cypress-visual-regression';
 addMatchImageSnapshotCommand();
 
-describe('testing login', () => {
+// login e2e test and visual regression test
+describe('testing login page', () => {
   beforeEach(() => {
     cy.visit('http://162.243.187.137/login')
   })
