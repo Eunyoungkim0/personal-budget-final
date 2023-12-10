@@ -24,7 +24,7 @@ describe('DashboardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  //For unit testing
+  //For unit test
   it('should return string value of the month when number is given', () => {
     expect(component.numericMonthToString(1)).toBe('Jan');
     expect(component.numericMonthToString(2)).toBe('Feb');
@@ -41,7 +41,7 @@ describe('DashboardComponent', () => {
   });
 
 
-  //For unit testing
+  //For unit test
   it('should return false when income value is 0', () => {
     const inputIncome = document.createElement('input') as HTMLInputElement;
     inputIncome.id = 'income';
@@ -52,7 +52,7 @@ describe('DashboardComponent', () => {
   });
 
 
-  //For unit testing
+  //For unit test
   it('should return true when income value is not 0', () => {
     const inputIncome = document.createElement('input') as HTMLInputElement;
     inputIncome.id = 'income';
